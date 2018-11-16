@@ -1,0 +1,32 @@
+DATE="`date +%d/%m/%Y" "%a" "`"
+
+if [ -f ~/.bash_functions ]; then
+
+   . ~/.bash_functions
+fi
+
+if [ -f ~/.bash_aliases ]; then
+
+   . ~/.bash_aliases
+fi
+
+if [ `type -t connection` ] && [ `type -t batt` ]; then
+
+   PS1='$(RET=$? ; if [[ $RET -ne 0 ]]; then printf "\[\e[1;92m\]┌─\[\e[0m\]\[\e[0;91m\] $RET \[\e[0;90m\]:( \[\e[0m\]"; else printf "\[\e[1;92m\]┌─\[\e[0m\]"; fi)[\[\e[0;90m\]$DATE@\t\[\e[0m\]] [`connection`]\n\[\e[1;92m\]┌─[\[\e[0m\]\[\e[01;34m\]\w\[\e[0m\]\[\e[1;92m\]]\[\e[0m\]\n\[\e[1;92m\]└─`batt`${debian_chroot:+($debian_chroot)}\[\e[01;32m\]\u@\h:\$\[\033[0m\] '
+
+else
+
+   PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+
+fi
+
+# enable programmable completion features (you don't need to enable
+# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+# sources /etc/bash.bashrc).
+if ! shopt -oq posix; then
+   if [ -f /usr/share/bash-completion/bash_completion ]; then
+      . /usr/share/bash-completion/bash_completion
+   elif [ -f /etc/bash_completion ]; then
+      . /etc/bash_completion
+   fi
+fi
