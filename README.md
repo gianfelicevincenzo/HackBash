@@ -1,4 +1,4 @@
-# hack_bash
+# HackBash
 
 <img width="1900" alt="demo" src="img/demo.png"/>
 
@@ -7,7 +7,7 @@
 
 # Descrizione
 
-Raccolta di funzioni e script che servono a facilitarti la vita. Per una dettagliata documentazione sulle funzioni, consultare https://vincenzogianfelice.github.io/hack_bash.
+Raccolta di funzioni e script che servono a facilitarti la vita. Per una dettagliata documentazione sulle funzioni, consultare https://vincenzogianfelice.github.io/HackBash.
 
 # Installazione
 
@@ -16,14 +16,14 @@ _Potete scegliere **tre** opzioni:_
 ***Inserire tutto il contenuto nel proprio file '.bashrc' in questo modo:***
 
 ```
-        find bash_hack/src/ -type f -exec cat'{}' >> ~/.bashrc ';'
+        find HackBash/src/ -type f -exec cat'{}' >> ~/.bashrc ';'
 ```
 
 ***Inserire tutto in una cartella e lanciarli tutti tramite il file '.bashrc':***
 
 ```
         mkdir ~/.script
-        find bash_hack/src/ -type f -exec cp '{}' ~/.script/ ';'
+        find HackBash/src/ -type f -exec cp '{}' ~/.script/ ';'
         chattr +i ~/.script		# Protezione in caso di cancellazione
         nano ~/.bashrc
 ```
@@ -45,9 +45,9 @@ _Potete scegliere **tre** opzioni:_
 ***Copiare i file nella propria home:***
 
 ```
-        cp hack_bash/src/bashrc ~/.bashrc        ### ATTENZIONE! In questo modo, verra sovrascritto il file precedente con quello nuovo.
-        cp hack_bash/src/bash_aliases ~/.bash_aliases
-        cp hack_bash/src/functions/bash_functions  ~/.bash_functions
+        cp HackBash/src/bashrc ~/.bashrc        ### ATTENZIONE! In questo modo, verra sovrascritto il file precedente con quello nuovo.
+        cp HackBash/src/bash_aliases ~/.bash_aliases
+        cp HackBash/src/functions/bash_functions  ~/.bash_functions
 ```
 Per lanciarli potete digitare:
 
